@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DSS Fire Systems</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => AOS.init());</script>
+
+
+  <!-- Meta Tags -->
+   
+  <meta name="description" content="DSS Fire Systems – Fire safety solutions across South Africa. Experts in extinguishers, CCTV, and evacuation systems." />
+  <meta property="og:title" content="DSS Fire Systems" />
+  <meta property="og:image" content="ASSETS/IMG/BANNER.png" />
+  <meta property="og:description" content="Protecting What Matters Most with quality fire safety systems." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+</head>
+
+<body class="font-sans text-gray-800 flex flex-col min-h-screen">
+
+<main class="flex-grow">
+    
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-blue-900 text-white overflow-hidden transition-all duration-300">
+  <!-- Background Video -->
+  <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none opacity-30">
+    <source src="ASSETS/VID/dss-promo-video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 z-5 pointer-events-none bg-gradient-to-t from-white to-blue-900 opacity-70"></div>
+
+  <!-- Header Content -->
+  <div class="relative z-10 w-full max-w-[95vw] lg:max-w-[1800px] xl:max-w-[1920px] mx-auto p-4 flex flex-wrap lg:flex-nowrap items-center justify-between">
+    
+    <!-- Logo + Title + Mobile Toggle -->
+    <div class="flex items-center justify-between w-full lg:w-auto">
+      <a href="index.html" class="bg-white rounded-full p-2 shadow-md">
+        <img src="ASSETS/IMG/DSS-LOGO.png" alt="Logo" class="h-12 w-auto">
+      </a>
+      <h1 class="text-xl font-bold ml-4 lg:text-2xl">DSS FIRE SYSTEMS</h1>
+
+      <!-- Mobile Toggle -->
+      <button id="mobile-menu-toggle" class="lg:hidden ml-auto text-white focus:outline-none text-3xl">
+        ☰
+      </button>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div id="nav-menu" class="w-full lg:w-auto mt-4 lg:mt-0 lg:flex items-center justify-end space-y-4 lg:space-y-0 lg:space-x-4 hidden lg:flex-row flex-col text-center transition-all duration-300 ease-in-out">
+      
+      <!-- Links -->
+      <nav class="flex flex-col lg:flex-row lg:space-x-4 space-y-2 lg:space-y-0 w-full lg:w-auto">
+        <a href="#about" class="px-4 py-2 bg-white/10 border border-white/30 rounded font-semibold hover:bg-white/20">About Us</a>
+        <a href="#services" class="px-4 py-2 bg-white/10 border border-white/30 rounded font-semibold hover:bg-white/20">Services</a>
+        <a href="#contact" class="px-4 py-2 bg-white/10 border border-white/30 rounded font-semibold hover:bg-white/20">Contact</a>
+        <a href="#contact" class="px-4 py-2 bg-blue-800 border border-white/30 rounded font-bold hover:bg-blue-700 transition">
+          Request Quote
+        </a>
+      </nav>
+
+    </div>
+  </div>
+</header>
+
+
+<script>
+  const header = document.getElementById('main-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('fixed', 'top-0', 'left-0', 'right-0', 'bg-blue-900', 'bg-opacity-80', 'backdrop-blur-sm', 'shadow-lg');
+      header.classList.remove('relative', 'bg-opacity-100');
+    } else {
+      header.classList.remove('fixed', 'top-0', 'left-0', 'right-0', 'bg-opacity-80', 'backdrop-blur-sm', 'shadow-lg');
+      header.classList.add('relative', 'bg-opacity-100');
+    }
+  });
+</script>
+
+<script>
+  const menuToggle = document.getElementById('mobile-menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('hidden');
+  });
+</script>
+
+
+ 
+<!-- Hero Section -->
+<section class="relative h-[500px] md:h-[700px] lg:h-[800px] overflow-hidden text-white text-center flex items-center justify-center">
+  <!-- Video Background -->
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover object-center">
+    <source src="ASSETS/VID/DSS FIRE SYSTEMS.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Full-Screen Dark Overlay -->
+  <div class="absolute inset-0 bg-black/60 z-0"></div>
+
+  <!-- Headline Content -->
+  <div class="relative z-10 px-4 md:px-8 p-6 rounded max-w-3xl">
+    <h2 class="text-3xl md:text-5xl font-bold leading-tight opacity-0 translate-y-6 animate-fade-in-up">
+      PROTECTION OF LIFE AND PROPERTY
+    </h2>
+  </div>
+</section>
+
+<!-- Tailwind Custom Animation -->
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(1.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease-out forwards;}
+</style>
+
+
+<!-- About Section -->
+<section id="about" class="relative bg-blue-900 text-white py-16 px-6 lg:px-20 overflow-hidden">
+  <!-- Smoke Background Video -->
+  <video
+    autoplay
+    loop
+    muted
+    playsinline
+    class="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none opacity-30"
+  >
+    <source src="ASSETS/VID/dss-promo-video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Gradient Overlay -->
+  <div class="absolute inset-0 z-5 pointer-events-none bg-gradient-to-t from-white to-blue-900 opacity-70"></div>
+
+  <div class="relative z-10 w-full max-w-[95vw] lg:max-w-[1800px] xl:max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+
+    <!-- Left Column: Info Cards -->
+    <div class="flex flex-col justify-between space-y-6">
+      
+      <!-- ABOUT US -->
+      <div class="flex-1 border border-white/30 rounded-lg p-6 shadow-md transition duration-300 hover:shadow-white/40 hover:border-white bg-white/10">
+        <h3 class="text-xl font-bold mb-2 white">ABOUT US</h3>
+        <p class="flex-grow text-white">We are a black-owned registered company specializing in fire safety systems across South Africa and beyond.</p>
+      </div>
+
+      <!-- MISSION -->
+      <div class="flex-1 border border-white/30 rounded-lg p-6 shadow-md transition duration-300 hover:shadow-white/40 hover:border-white bg-white/10">
+        <h3 class="text-xl font-bold mb-2 text-white">MISSION</h3>
+        <p class="flex-grow text-white">To fulfill customer needs and recruit qualified employees to maintain service compliance.</p>
+      </div>
+
+      <!-- VISION -->
+      <div class="flex-1 border border-white/30 rounded-lg p-6 shadow-md transition duration-300 hover:shadow-white/40 hover:border-white bg-white/10">
+        <h3 class="text-xl font-bold mb-2 text-white">VISION</h3>
+        <p class="flex-grow text-white">To be the best compliant service provider in South Africa and compete with top-tier brands.</p>
+      </div>
+      
+    </div>
+
+    <!-- Right Column: Clickable Thumbnail to Video -->
+    <div
+      id="video-container"
+      class="relative w-full max-h-[600px] border border-white/20 rounded-lg shadow-lg overflow-hidden bg-white/10 cursor-pointer flex items-center justify-center"
+      aria-label="Video preview, click to play"
+      role="button"
+      tabindex="0"
+      onkeydown="if(event.key==='Enter' || event.key===' ') this.click()"
+    >
+      <img
+        id="video-thumb"
+        src="ASSETS/IMG/DSS-THUMB.png"
+        alt="Video thumbnail preview"
+        class="w-full max-h-[600px] object-contain select-none pointer-events-none"
+      />
+      <!-- Play icon overlay -->
+      <svg
+        class="absolute w-16 h-16 text-white opacity-75"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 12l-6.286 3.75V8.25l6.286 3.75z" />
+      </svg>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const container = document.getElementById('video-container');
+  container.addEventListener('click', () => {
+    container.innerHTML = `
+      <video controls autoplay class="w-full max-h-[600px] object-contain" playsinline>
+        <source src="ASSETS/VID/DSS-OVERVIEW.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    `;
+  });
+
+  // Optional: keyboard accessibility handled via onkeydown attribute in div above
+</script>
+
+
+<!-- Services Section -->
+<section id="services" class="bg-white py-12 px-4" data-aos="fade-up" data-aos-delay="100">
+  <div class="w-full max-w-[95vw] lg:max-w-[1800px] xl:max-w-[1920px] mx-auto">
+    <h3 class="text-2xl font-bold mb-6 text-center">Our Services</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Fire Equipment -->
+      <div class="bg-white shadow rounded overflow-hidden transform transition duration-300 hover:shadow-lg hover:scale-105" x-data="{ open: false }">
+        <img src="ASSETS/IMG/fire extinguishers.jpg" alt="Fire equipment" class="w-full h-48 object-cover" loading="lazy">
+        <div class="p-6">
+          <h4 class="text-lg font-semibold mb-2">Fire Equipment</h4>
+          <p class="text-sm mb-2">Top-quality firefighting equipment and services.</p>
+
+          <div class="border-t border-gray-300 mt-4 pt-4 flex justify-between items-center gap-2 flex-wrap sm:flex-nowrap">
+            <button @click="open = !open" class="text-blue-700 text-sm hover:underline flex-shrink-0">
+              <span x-show="!open">More</span><span x-show="open">Hide</span>
+            </button>
+            <a href="#contact" onclick="setService('Fire Equipment')" class="text-blue-600 text-sm hover:underline flex-shrink-0">Request Service</a>
+          </div>
+
+          <div class="text-sm text-gray-700 mt-2" x-show="open" x-transition>
+            <p>We supply high-quality firefighting equipment from leading manufacturers, ensuring maximum safety and reliability. Our range includes fire hoses, extinguishers, blankets, hydrants, hose reels, firestops, safety signage, and installation and maintenance services. Built to industry standards, our solutions provide effective fire prevention, control, and suppression, protecting lives and property with full compliance..</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fire Detection -->
+      <div class="bg-white shadow rounded overflow-hidden transform transition duration-300 hover:shadow-lg hover:scale-105" x-data="{ open: false }">
+        <img src="ASSETS/IMG/DSS-Fire-Detection-Systems.jpg" alt="Fire detection" class="w-full h-48 object-cover" loading="lazy">
+        <div class="p-6">
+          <h4 class="text-lg font-semibold mb-2">Fire Detection</h4>
+          <p class="text-sm mb-2">Advanced systems for early warning and safety.</p>
+
+          <div class="border-t border-gray-300 mt-4 pt-4 flex justify-between items-center gap-2 flex-wrap sm:flex-nowrap">
+            <button @click="open = !open" class="text-blue-700 text-sm hover:underline flex-shrink-0">
+              <span x-show="!open">More</span><span x-show="open">Hide</span>
+            </button>
+            <a href="#contact" onclick="setService('Fire Detection')" class="text-blue-600 text-sm hover:underline flex-shrink-0">Request Service</a>
+          </div>
+
+          <div class="text-sm text-gray-700 mt-2" x-show="open" x-transition>
+            <p>We provide advanced fire detection solutions to protect property and occupants, ensuring early warnings for quick response and safe evacuation. Our systems include smoke and heat detectors, addressable and conventional alarms, wireless fire alarms, carbon monoxide detectors, emergency voice communication systems, and integrated alarm monitoring. With state-of-the-art technology and regular maintenance, we keep your fire detection systems fully operational, minimizing risks and safeguarding lives.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fire Suppression Systems -->
+      <div class="bg-white shadow rounded overflow-hidden transform transition duration-300 hover:shadow-lg hover:scale-105" x-data="{ open: false }">
+        <img src="ASSETS/IMG/evac-systems.jpg" alt="Fire suppression systems" class="w-full h-48 object-cover" loading="lazy">
+        <div class="p-6">
+          <h4 class="text-lg font-semibold mb-2">Fire Suppression Systems</h4>
+          <p class="text-sm mb-2">Fast, effective fire control solutions and evacuation.</p>
+
+          <div class="border-t border-gray-300 mt-4 pt-4 flex justify-between items-center gap-2 flex-wrap sm:flex-nowrap">
+            <button @click="open = !open" class="text-blue-700 text-sm hover:underline flex-shrink-0">
+              <span x-show="!open">More</span><span x-show="open">Hide</span>
+            </button>
+            <a href="#contact" onclick="setService('Fire Suppression')" class="text-blue-600 text-sm hover:underline flex-shrink-0">Request Service</a>
+          </div>
+
+          <div class="text-sm text-gray-700 mt-2" x-show="open" x-transition>
+            <p>We specialize in the design, installation, and maintenance of fire suppression systems to ensure fast, effective fire control and safety. Our solutions include wet, dry, pre-action, chemical, and foam-based systems, tailored to meet specific needs while adhering to the highest safety standards. With expert maintenance and support, we keep your systems fully operational, minimizing risks and protecting lives and property.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fire Sprinkler Systems -->
+      <div class="bg-white shadow rounded overflow-hidden transform transition duration-300 hover:shadow-lg hover:scale-105" x-data="{ open: false }">
+        <img src="ASSETS/IMG/sprinklers.jpg" alt="Fire sprinklers" class="w-full h-48 object-cover" loading="lazy">
+        <div class="p-6">
+          <h4 class="text-lg font-semibold mb-2">Fire Sprinklers Systems</h4>
+          <p class="text-sm mb-2">Automatic fire sprinkler systems for reliable fire control.</p>
+
+          <div class="border-t border-gray-300 mt-4 pt-4 flex justify-between items-center gap-2 flex-wrap sm:flex-nowrap">
+            <button @click="open = !open" class="text-blue-700 text-sm hover:underline flex-shrink-0">
+              <span x-show="!open">More</span><span x-show="open">Hide</span>
+            </button>
+            <a href="#contact" onclick="setService('Fire Sprinklers')" class="text-blue-600 text-sm hover:underline flex-shrink-0">Request Service</a>
+          </div>
+
+          <div class="text-sm text-gray-700 mt-2" x-show="open" x-transition>
+            <p>We provide reliable, automatic fire sprinkler systems designed for swift activation to control and extinguish fires. Our expert team specializes in designing, installing, and certifying wet, dry, pre-action, and deluge sprinkler systems, ensuring full compliance with safety regulations. With routine inspections, testing, and maintenance, we keep your systems in peak condition, offering long-term fire protection for people and property.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Side Promo Video -->
+<div id="side-video-promo" class="fixed bottom-10 right-5 z-40 w-72 rounded-lg overflow-hidden shadow-lg">
+  <!-- Header with close button -->
+  <div class="flex justify-between items-center bg-blue-800 px-4 py-2">
+    <h3 class="text-sm font-semibold text-white">DSS WINTER SPECIAL FOR 4.5KG DCP</h3>
+    <button id="close-video-promo" class="text-white hover:text-red-500 text-2xl leading-none">&times;</button>
+  </div>
+  <!-- Video Container -->
+  <video
+    autoplay
+    loop
+    muted
+    playsinline
+    class="w-full h-auto"
+  >
+    <source src="ASSETS/VID/promo-3d-animation.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<!-- Promo Script -->
+<script>
+  const sideVideoPromo = document.getElementById('side-video-promo');
+  const closeVideoPromo = document.getElementById('close-video-promo');
+
+  closeVideoPromo.addEventListener('click', () => {
+    sideVideoPromo.classList.add('hidden');
+  });
+</script>
+
+
+<!-- Contact Section -->
+<section id="contact" class="relative bg-gradient-to-b from-gray-300 via-white to-blue-900 text-black py-16 px-6 lg:px-20 overflow-hidden">
+  <div class="relative z-10 w-full max-w-[95vw] lg:max-w-[1800px] xl:max-w-[1920px] mx-auto grid md:grid-cols-2 gap-12">
+
+    <!-- Contact Info Cards -->
+    <div class="flex flex-col space-y-8 flex-grow">
+      
+      <!-- Operating Hours -->
+      <div class="border border-black/20 rounded-lg p-6 bg-white/50 shadow-md hover:shadow-black/30 transition duration-300">
+        <h3 class="text-xl font-bold mb-3">Operating Hours</h3>
+        <p>Mon–Fri: 08:00 – 17:00<br>Sat: 08:00 – 12:00<br>Sun: Closed<br><b>Public Holidays: Closed</b></p>
+      </div>
+
+      <!-- Location -->
+      <div class="border border-black/20 rounded-lg p-6 bg-white/50 shadow-md hover:shadow-black/30 transition duration-300 flex flex-col flex-grow">
+        <h3 class="text-xl font-bold mb-3">Location</h3>
+        <p>Unit 68, Kya Sands, Randburg, Gauteng</p>
+        <div class="mt-5 flex-grow">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.1584397337524!2d27.940212374300618!3d-26.028371477185342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9575817993ed35%3A0x51f9fab305ef3608!2sDSS%20Fire%20Systems!5e0!3m2!1sen!2sza!4v1751529974505!5m2!1sen!2sza"
+            class="w-full h-full rounded"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form with Images & Follow Us -->
+    <div class="flex flex-col border border-black/20 rounded-lg p-6 bg-white/50 shadow-md hover:shadow-black/30 transition duration-300 h-full">
+      
+      <!-- Top: Form and Images grow to fill space -->
+      <div class="flex flex-col space-y-8 flex-grow">
+        <!-- Get in Touch -->
+        <div>
+          <h3 class="text-xl font-bold mb-4">Book a Consultation</h3>
+
+          <form id="quoteForm" class="space-y-5">
+            <input 
+              type="text" 
+              name="name"
+              placeholder="Full Name (e.g. John Smith)" 
+              class="w-full p-3 bg-transparent border border-black/20 rounded placeholder-black" 
+              maxlength="50"
+              pattern="^[A-Za-z]+(?:\s[A-Za-z]+)?$"
+              title="Please enter only your name and surname (letters only)."
+              required
+            >
+
+            <input 
+              type="email" 
+              name="email"
+              placeholder="Enter Email" 
+              class="w-full p-3 bg-transparent border border-black/20 rounded placeholder-black" 
+              required
+            >
+
+            <input 
+              type="tel" 
+              name="phone"
+              placeholder="Contact Number (optional)" 
+              class="w-full p-3 bg-transparent border border-black/20 rounded placeholder-black" 
+              inputmode="numeric" 
+              pattern="[0-9]{7,15}" 
+              title="Please enter a valid phone number using digits only (7–15 digits)." 
+              oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+            >
+
+            <select name="service" required class="w-full p-3 pr-10 bg-white/70 border border-black/20 rounded text-black appearance-none">
+              <option value="" disabled selected>Select a Service</option>
+              <option>Fire Equipment</option>
+              <option>Fire Detection</option>
+              <option>Fire Suppression</option>
+              <option>Fire Sprinklers</option>
+            </select>
+
+            <button 
+              type="submit" 
+              class="bg-blue-700 hover:bg-blue-800 text-white w-full sm:w-auto px-6 py-4 sm:py-2 rounded font-bold text-lg sm:text-base transition"
+            >
+              Request a Quote
+            </button>
+
+            <div id="formResponse" class="mt-4 text-base font-semibold text-center"></div>
+          </form>
+        </div>
+
+        <!-- Images -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="w-full aspect-[4/3] overflow-hidden rounded shadow-md hover:shadow-lg transition">
+            <img src="ASSETS/IMG/dss-company-car.jpg" alt="Company Vehicle" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="w-full aspect-[4/3] overflow-hidden rounded shadow-md hover:shadow-lg transition">
+            <img src="ASSETS/IMG/dss-office.jpg" alt="Company Office Exterior" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom: Follow Us sticks to the bottom -->
+      <div class="mt-8 border border-black/20 rounded-lg p-6 bg-black/30 backdrop-blur-sm shadow-md hover:shadow-black/40 transition duration-300">
+        <h3 class="text-xl font-bold mb-3 text-white">Follow Us</h3>
+        <div class="flex space-x-6 items-center">
+          <a href="https://www.facebook.com/DSSFireSystems" target="_blank" aria-label="Facebook">
+            <img src="ASSETS/IMG/dss-facebook.svg" alt="Facebook" class="w-8 h-8 hover:scale-110 transition" />
+          </a>
+          <a href="https://www.linkedin.com/company/dss-fire-systems" target="_blank" aria-label="LinkedIn">
+            <img src="ASSETS/IMG/dss-linkedin.svg" alt="LinkedIn" class="w-8 h-8 hover:scale-110 transition" />
+          </a>
+          <a href="https://www.tiktok.com/@dss.fire.systems" target="_blank" aria-label="TikTok">
+            <img src="ASSETS/IMG/dss-tiktok.svg" alt="TikTok" class="w-8 h-8 hover:scale-110 transition" />
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  document.getElementById("quoteForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const responseBox = document.getElementById("formResponse");
+
+    try {
+      const res = await fetch("contact.php", {
+        method: "POST",
+        body: formData
+      });
+
+      const text = await res.text();
+      responseBox.innerText = text;
+      responseBox.style.color = "green";
+    } catch (err) {
+      responseBox.innerText = "Something went wrong. Please try again.";
+      responseBox.style.color = "red";
+    }
+  });
+</script>
+
+
+
+<!-- FAQ Section -->
+<section id="faq" class="relative bg-blue-900 text-white py-16 px-6 lg:px-20 overflow-hidden">
+  <div class="relative z-10 w-full max-w-[95vw] lg:max-w-[1800px] xl:max-w-[1920px] mx-auto">
+    <h3 class="text-2xl font-bold text-center mb-8">Frequently Asked Questions</h3>
+    
+    <div class="space-y-4" x-data="{ openItem: null }">
+      
+      <!-- FAQ Item 1 -->
+      <div class="border border-white/30 rounded-lg p-6 bg-white/10 shadow-md hover:shadow-white/40 transition duration-300">
+        <button 
+          class="w-full text-left font-semibold text-white focus:outline-none"
+          @click="openItem === 1 ? openItem = null : openItem = 1"
+        >
+          Can I schedule a site visit to discuss my fire safety needs?
+        </button>
+        <div 
+          x-show="openItem === 1" 
+          x-transition 
+          class="mt-4 text-white"
+          x-cloak
+        >
+          We understand the importance of seeing our fire systems in action. Schedule a visit to experience our equipment and discuss your fire safety requirements with our experts.
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="border border-white/30 rounded-lg p-6 bg-white/10 shadow-md hover:shadow-white/40 transition duration-300">
+        <button 
+          class="w-full text-left font-semibold text-white focus:outline-none"
+          @click="openItem === 2 ? openItem = null : openItem = 2"
+        >
+          Who will install and maintain the fire systems?
+        </button>
+        <div 
+          x-show="openItem === 2" 
+          x-transition 
+          class="mt-4 text-white"
+          x-cloak
+        >
+          Our team of experienced and certified technicians will handle the installation and maintenance of your fire systems. Rest assured, you're in safe hands.
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="border border-white/30 rounded-lg p-6 bg-white/10 shadow-md hover:shadow-white/40 transition duration-300">
+        <button 
+          class="w-full text-left font-semibold text-white focus:outline-none"
+          @click="openItem === 3 ? openItem = null : openItem = 3"
+        >
+          What are the available financing options for fire system installations?
+        </button>
+        <div 
+          x-show="openItem === 3" 
+          x-transition 
+          class="mt-4 text-white"
+          x-cloak
+        >
+          We provide flexible payment plans to accommodate your budget for fire system installations. Our team will work with you to find the best payment solution for your business.
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="border border-white/30 rounded-lg p-6 bg-white/10 shadow-md hover:shadow-white/40 transition duration-300">
+        <button 
+          class="w-full text-left font-semibold text-white focus:outline-none"
+          @click="openItem === 4 ? openItem = null : openItem = 4"
+        >
+          How can I receive guidance on choosing the right fire protection solutions?
+        </button>
+        <div 
+          x-show="openItem === 4" 
+          x-transition 
+          class="mt-4 text-white"
+          x-cloak
+        >
+          Consult with our fire safety advisor who will guide you through the process of selecting the most suitable fire protection solutions for your specific needs. Get expert advice tailored to your requirements.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Reviews Section -->
+<section class="bg-white py-20 px-6 md:px-16" id="reviews">
+  <div class="w-full max-w-[95vw] lg:max-w-[1800px] xl:max-w-[1920px] mx-auto">
+    <!-- Live Google Reviews Widget -->
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div class="elfsight-app-fbc0340c-8ca6-4569-8d4c-a9b9a029016f" data-elfsight-app-lazy></div>
+  </div>
+
+</section>
+
+</main>
+  
+
+<!-- Accreditation Logos Section -->
+<section class="bg-gray-100 py-6"> 
+  <div class="w-full max-w-[95vw] lg:max-w-[1800px] xl:max-w-[1920px] mx-auto px-4">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center">
+      
+      <!-- CIDB -->
+      <a href="https://www.cidb.org.za/" target="_blank" rel="noopener" class="transition-transform hover:scale-105">
+        <img src="ASSETS/IMG/CIDB.png" alt="CIDB Accreditation Logo" class="h-10 object-contain grayscale hover:grayscale-0 transition duration-300" />
+      </a>
+
+      <!-- SABS -->
+      <a href="https://www.sabs.co.za/" target="_blank" rel="noopener" class="transition-transform hover:scale-105">
+        <img src="ASSETS/IMG/sabs.png" alt="SABS Certified Logo" class="h-10 object-contain grayscale hover:grayscale-0 transition duration-300" />
+      </a>
+
+      <!-- PSiRA -->
+      <a href="https://www.psira.co.za/" target="_blank" rel="noopener" class="transition-transform hover:scale-105">
+        <img src="ASSETS/IMG/Psira.png" alt="PSiRA Registered Logo" class="h-10 object-contain grayscale hover:grayscale-0 transition duration-300" />
+      </a>
+
+      <!-- SAQCC Fire -->
+      <a href="https://www.saqccfire.co.za/" target="_blank" rel="noopener" class="transition-transform hover:scale-105">
+        <img src="ASSETS/IMG/SAQCC.avif" alt="SAQCC Fire Registration Logo" class="h-10 object-contain grayscale hover:grayscale-0 transition duration-300" />
+      </a>
+
+      <!-- FPASA -->
+      <a href="https://www.fpasa.co.za/" target="_blank" rel="noopener" class="transition-transform hover:scale-105">
+        <img src="ASSETS/IMG/FPASA.png" alt="FPASA Member Logo" class="h-10 object-contain grayscale hover:grayscale-0 transition duration-300" />
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<footer class="bg-blue-900 text-white py-6 text-center text-sm">
+    © 2025 DSS Fire Systems. All rights reserved. | <a href="#" class="underline">Privacy Policy</a>
+</footer>
+
+<!-- Services Section js-->
+<script>
+  function setService(serviceName) {
+    const serviceDropdown = document.querySelector('#contact select');
+    if (serviceDropdown) {
+      for (let option of serviceDropdown.options) {
+        if (option.text === serviceName) {
+          option.selected = true;
+          break;
+        }
+      }
+    }
+    // Scroll smoothly to contact form
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+</script>
+
+
+  </body>
+</html>
