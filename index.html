@@ -130,7 +130,6 @@
     animation: fade-in-up 1s ease-out forwards;}
 </style>
 
-
 <!-- About Section -->
 <section id="about" class="relative bg-blue-900 text-white py-16 px-6 lg:px-20 overflow-hidden">
   <!-- Smoke Background Video -->
@@ -152,71 +151,38 @@
 
     <!-- Left Column: Info Cards -->
     <div class="flex flex-col justify-between space-y-6">
-      
       <!-- ABOUT US -->
       <div class="flex-1 border border-white/30 rounded-lg p-6 shadow-md transition duration-300 hover:shadow-white/40 hover:border-white bg-white/10">
-        <h3 class="text-xl font-bold mb-2 white">ABOUT US</h3>
-        <p class="flex-grow text-white">We are a black-owned registered company specializing in fire safety systems across South Africa and beyond.</p>
+        <h3 class="text-xl font-bold mb-2">ABOUT US</h3>
+        <p class="text-white">We are a black-owned registered company specializing in fire safety systems across South Africa and beyond.</p>
       </div>
 
       <!-- MISSION -->
       <div class="flex-1 border border-white/30 rounded-lg p-6 shadow-md transition duration-300 hover:shadow-white/40 hover:border-white bg-white/10">
-        <h3 class="text-xl font-bold mb-2 text-white">MISSION</h3>
-        <p class="flex-grow text-white">To fulfill customer needs and recruit qualified employees to maintain service compliance.</p>
+        <h3 class="text-xl font-bold mb-2">MISSION</h3>
+        <p class="text-white">To fulfill customer needs and recruit qualified employees to maintain service compliance.</p>
       </div>
 
       <!-- VISION -->
       <div class="flex-1 border border-white/30 rounded-lg p-6 shadow-md transition duration-300 hover:shadow-white/40 hover:border-white bg-white/10">
-        <h3 class="text-xl font-bold mb-2 text-white">VISION</h3>
-        <p class="flex-grow text-white">To be the best compliant service provider in South Africa and compete with top-tier brands.</p>
+        <h3 class="text-xl font-bold mb-2">VISION</h3>
+        <p class="text-white">To be the best compliant service provider in South Africa and compete with top-tier brands.</p>
       </div>
-      
     </div>
 
-    <!-- Right Column: Clickable Thumbnail to Video -->
-    <div
-      id="video-container"
-      class="relative w-full max-h-[600px] border border-white/20 rounded-lg shadow-lg overflow-hidden bg-white/10 cursor-pointer flex items-center justify-center"
-      aria-label="Video preview, click to play"
-      role="button"
-      tabindex="0"
-      onkeydown="if(event.key==='Enter' || event.key===' ') this.click()"
-    >
-      <img
-        id="video-thumb"
-        src="ASSETS/IMG/DSS-THUMB.png"
-        alt="Video thumbnail preview"
-        class="w-full max-h-[600px] object-contain select-none pointer-events-none"
-      />
-      <!-- Play icon overlay -->
-      <svg
-        class="absolute w-16 h-16 text-white opacity-75"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        stroke-width="2"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 12l-6.286 3.75V8.25l6.286 3.75z" />
-      </svg>
+    <!-- Right Column: Embedded LinkedIn Video -->
+    <div class="w-full h-full border border-white/20 rounded-lg shadow-lg overflow-hidden bg-white/10 flex items-center justify-center">
+      <iframe
+        src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7348608528716083200?compact=1"
+        class="w-full aspect-video max-h-[600px] rounded-lg border-0"
+        allowfullscreen=""
+        title="DSS Overview LinkedIn Video"
+      ></iframe>
     </div>
 
   </div>
 </section>
 
-<script>
-  const container = document.getElementById('video-container');
-  container.addEventListener('click', () => {
-    container.innerHTML = `
-      <video controls autoplay class="w-full max-h-[600px] object-contain" playsinline>
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7348608528716083200?compact=1" height="399" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
-        Your browser does not support the video tag.
-      </video>
-    `;
-  });
-
-  // Optional: keyboard accessibility handled via onkeydown attribute in div above
-</script>
 
 
 <!-- Services Section -->
