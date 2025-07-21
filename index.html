@@ -170,17 +170,49 @@
       </div>
     </div>
 
-    <!-- Right Column: Embedded LinkedIn Video -->
-    <div class="w-full h-full border border-white/20 rounded-lg shadow-lg overflow-hidden bg-white/10 flex items-center justify-center">
+
+<!-- Right Column: Click-to-play LinkedIn Embed with Thumbnail -->
+<div
+  id="linkedin-video-container"
+  class="relative w-full max-h-[600px] border border-white/20 rounded-lg shadow-lg overflow-hidden bg-white/10 cursor-pointer flex items-center justify-center"
+  aria-label="LinkedIn video preview, click to play"
+  role="button"
+  tabindex="0"
+  onkeydown="if(event.key==='Enter' || event.key===' ') this.click()"
+>
+  <img
+    id="linkedin-thumb"
+    src="ASSETS/IMG/DSS-THUMB.png"
+    alt="Video thumbnail preview"
+    class="w-full max-h-[600px] object-contain select-none pointer-events-none"
+  />
+  <!-- Play icon overlay -->
+  <svg
+    class="absolute w-16 h-16 text-white opacity-75"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 12l-6.286 3.75V8.25l6.286 3.75z" />
+  </svg>
+</div>
+
+<script>
+  const linkedinContainer = document.getElementById('linkedin-video-container');
+  linkedinContainer.addEventListener('click', () => {
+    linkedinContainer.innerHTML = `
       <iframe
         src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7348608528716083200?compact=1"
         class="w-full aspect-video max-h-[600px] rounded-lg border-0"
         allowfullscreen=""
         title="DSS Overview LinkedIn Video"
       ></iframe>
-    </div>
+    `;
+  });
+</script>
 
-  </div>
 </section>
 
 
