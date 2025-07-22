@@ -170,39 +170,51 @@
       </div>
     </div>
 
+    <!-- Right Column: LinkedIn Video -->
+    <div
+      id="linkedin-video-container"
+      class="relative w-full max-h-[600px] border border-white/20 rounded-lg shadow-lg overflow-hidden bg-white/10 cursor-pointer flex items-center justify-center"
+      aria-label="LinkedIn video preview, click to play"
+      role="button"
+      tabindex="0"
+      onkeydown="if(event.key==='Enter' || event.key===' ') this.click()"
+    >
+      <img
+        id="linkedin-thumb"
+        src="ASSETS/IMG/DSS-THUMB.png"
+        alt="Video thumbnail preview"
+        class="w-full max-h-[600px] object-contain select-none pointer-events-none"
+      />
+      <!-- Play icon overlay -->
+      <svg
+        class="absolute w-16 h-16 text-white opacity-75"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 12l-6.286 3.75V8.25l6.286 3.75z" />
+      </svg>
+    </div>
 
-<!-- Right Column: Click-to-play LinkedIn Embed with Thumbnail -->
-<div
-  id="linkedin-video-container"
-  class="relative w-full max-h-[600px] border border-white/20 rounded-lg shadow-lg overflow-hidden bg-white/10 cursor-pointer flex items-center justify-center"
-  aria-label="LinkedIn video preview, click to play"
-  role="button"
-  tabindex="0"
-  onkeydown="if(event.key==='Enter' || event.key===' ') this.click()"
->
-  <img
-    id="linkedin-thumb"
-    src="ASSETS/IMG/DSS-THUMB.png"
-    alt="Video thumbnail preview"
-    class="w-full max-h-[600px] object-contain select-none pointer-events-none"
-  />
-  <!-- Play icon overlay -->
-  <svg
-    class="absolute w-16 h-16 text-white opacity-75"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    stroke-width="2"
-  >
-    <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 12l-6.286 3.75V8.25l6.286 3.75z" />
-  </svg>
-</div>
+  </div>
+</section>
 
 <script>
-  const linkedinContainer = document.getElementById('linkedin-video-container');
-  linkedinContainer.addEventListener('click', () => {
-    linkedinContainer.innerHTML = `
+  const container = document.getElementById('linkedin-video-container');
+  const originalHTML = container.innerHTML;
+
+  const restoreThumbnail = () => {
+    container.innerHTML = originalHTML;
+  };
+
+  container.addEventListener('click', function handleClick(event) {
+    // Avoid reloading if iframe is already shown
+    if (container.querySelector('iframe')) return;
+
+    // Show the LinkedIn video
+    container.innerHTML = `
       <iframe
         src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7348608528716083200?compact=1"
         class="w-full aspect-video max-h-[600px] rounded-lg border-0"
@@ -210,10 +222,25 @@
         title="DSS Overview LinkedIn Video"
       ></iframe>
     `;
+
+    // ⏱ Auto-restore after 60 seconds (1 minute)
+    const resetTimeout = setTimeout(() => restoreThumbnail(), 60000);
+
+    // 🖱 Outside click cancels and resets
+    const handleOutsideClick = (e) => {
+      if (!container.contains(e.target)) {
+        restoreThumbnail();
+        clearTimeout(resetTimeout);
+        document.removeEventListener('click', handleOutsideClick);
+      }
+    };
+
+    // Delay listener to avoid immediately catching the original click
+    setTimeout(() => {
+      document.addEventListener('click', handleOutsideClick);
+    }, 100);
   });
 </script>
-
-</section>
 
 
 
