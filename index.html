@@ -418,55 +418,61 @@
         <div>
           <h3 class="text-xl font-bold mb-4">Book a Consultation</h3>
 
-          <form id="quoteForm" class="space-y-5">
-            <input 
-              type="text" 
-              name="name"
-              placeholder="Full Name (e.g. John Smith)" 
-              class="w-full p-3 bg-transparent border border-black/20 rounded placeholder-black" 
-              maxlength="50"
-              pattern="^[A-Za-z]+(?:\s[A-Za-z]+)?$"
-              title="Please enter only your name and surname (letters only)."
-              required
-            >
+          <form id="contact-form" class="max-w-md mx-auto p-6 bg-white rounded shadow" action="#" method="POST">
+  <h3 class="text-2xl font-bold mb-6 text-center text-gray-800">Request Service</h3>
 
-            <input 
-              type="email" 
-              name="email"
-              placeholder="Enter Email" 
-              class="w-full p-3 bg-transparent border border-black/20 rounded placeholder-black" 
-              required
-            >
+  <label for="name" class="block mb-2 font-semibold text-gray-700">Full Name</label>
+  <input
+    type="text"
+    id="name"
+    name="name"
+    required
+    class="w-full mb-4 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+    placeholder="Your full name"
+  />
 
-            <input 
-              type="tel" 
-              name="phone"
-              placeholder="Contact Number (optional)" 
-              class="w-full p-3 bg-transparent border border-black/20 rounded placeholder-black" 
-              inputmode="numeric" 
-              pattern="[0-9]{7,15}" 
-              title="Please enter a valid phone number using digits only (7–15 digits)." 
-              oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-            >
+  <label for="email" class="block mb-2 font-semibold text-gray-700">Email Address</label>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    required
+    class="w-full mb-4 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+    placeholder="you@example.com"
+  />
 
-            <select name="service" required class="w-full p-3 pr-10 bg-white/70 border border-black/20 rounded text-black appearance-none">
-              <option value="" disabled selected>Select a Service</option>
-              <option>Fire Equipment</option>
-              <option>Fire Detection</option>
-              <option>Fire Suppression</option>
-              <option>Fire Sprinklers</option>
-              <option>Fire Training</option>
-            </select>
+  <label for="phone" class="block mb-2 font-semibold text-gray-700">Phone Number</label>
+  <input
+    type="tel"
+    id="phone"
+    name="phone"
+    class="w-full mb-4 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+    placeholder="+27 123 456 7890"
+  />
 
-            <button 
-              type="submit" 
-              class="bg-blue-700 hover:bg-blue-800 text-white w-full sm:w-auto px-6 py-4 sm:py-2 rounded font-bold text-lg sm:text-base transition"
-            >
-              Request a Quote
-            </button>
+  <label for="service" class="block mb-2 font-semibold text-gray-700">Select Service</label>
+  <select
+    id="service"
+    name="service"
+    required
+    class="w-full mb-6 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+  >
+    <option value="" disabled selected>Select a Service</option>
+    <option value="Fire Equipment">Fire Equipment</option>
+    <option value="Fire Detection">Fire Detection</option>
+    <option value="Gas Suppression">Gas Suppression</option>
+    <option value="Fire Sprinklers">Fire Sprinklers</option>
+    <option value="Evacuation Systems">Evacuation Systems</option>
+  </select>
 
-            <div id="formResponse" class="mt-4 text-base font-semibold text-center"></div>
-          </form>
+  <button
+    type="submit"
+    class="w-full bg-blue-600 text-white font-semibold py-3 rounded hover:bg-blue-700 transition"
+  >
+    Submit Request
+  </button>
+</form>
+
         </div>
 
         <!-- Images -->
